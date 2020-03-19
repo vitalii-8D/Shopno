@@ -569,6 +569,7 @@ header {
 }
 .cite-block {
 	display: inline-block;
+	position: relative;
 	width: 55%;
 	padding: 100px 80px 65px;
 	text-align:center;
@@ -591,6 +592,36 @@ header {
 	color: #999;
 	font-style: italic;
 }
+.stars {
+	color: #f2da3b;
+	margin-top: 20px;
+}
+.btn-block {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: -70px;
+}
+.btn-block button {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+.btn-block button:hover {
+	background-color: #71f6eb;
+}
+.btn-block #right-btn {
+	margin-left: 28px;
+}
+.btn-block i {
+	font-size: 20px;
+	color: #333;
+}
+
 
 @media screen and (max-width: 900px) {
 	.cite-block { 
@@ -615,5 +646,9 @@ header {
 	}
 	.cite-block { 
 		width: 90%;s
+	}
+	.btn-block {
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
