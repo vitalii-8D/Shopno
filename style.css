@@ -173,6 +173,21 @@ header {
 	    margin-bottom: 70px;
 	}
 }
+@media (orientation: landscape) {
+	header {
+		height: 100vh;
+	}
+	.header-section {
+   		background-image: none;
+	}
+	.header-title-section {
+   		justify-content: flex-start;
+	}
+	.header-title {
+		margin-top: 50px;
+	    margin-bottom: 20px;
+	}
+}
 /*Section Title*/
 .section-header {
 	width: 100%;
