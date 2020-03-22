@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,6 +8,10 @@ body {
     font-size: 16px;
     line-height: 1;
     color: #333;
+
+}
+ul, li {
+	list-style: none;
 }
 a {
     text-decoration: none;
@@ -43,7 +47,8 @@ section {
 header {
     height: 100vh;
     background-color: #eff0f2;
-    padding: 65px 0 0;
+    padding: 60px 0 0;
+    overflow: hidden;
 }
 .header-section {
     background: url('img/juice-glass.png') no-repeat right 8% bottom 14%;
@@ -52,6 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .header-logo {
     font-family: 'Montserrat', sans-serif;
@@ -66,40 +72,117 @@ header {
     font-size: 20px;
     font-weight: 800;
 }
+
+/*Кнопка меню*/
 .header-nav-btn {
+	display: none;
+	position: relative;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    border: none;
+}
+.header-nav-btn:focus {
+	outline: none;
 }
 .nav-btn {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     height: 3px;
     width: 30px;
     background-color: #606061;
-    border: 3px solid #606061;
+    border: 2px solid #606061;
     border-radius: 2px;
+
+    transition: .4s linear;
+    transition-property: border-color, background-color;
 }
 .nav-btn::before,.nav-btn::after  {
     content: '';
     position: absolute;
+    left: 0;
+    display: block;
     height: 3px;
-    width: 28px;
+    width: 30px;
     background-color: #606061;
-    border: 1px solid #606061;
+    border: 2px solid #606061;
     border-radius: 2px;
+
+    transition:  .4s linear;
+    
+    transition-property: transform, top, bottom;
 }
 .nav-btn::before {
-    top: -12px;
-    left: -3px;
+    top: 2px;
 }
 .nav-btn::after {
-    top: 7px;
-    left: -3px;
+    bottom: 2px;
 }
-.header-nav {
-    display: none;;
+.header-nav-btn.on-click .nav-btn {
+	background-color: #EFF0F2;
+    border-color: #EFF0F2;
+}
+.header-nav-btn.on-click .nav-btn::before {
+	transform: rotate(-45deg);
+	top: 13px;
+}
+.header-nav-btn.on-click .nav-btn::after {
+	transform: rotate(45deg);
+	bottom: 13px;
+}
+
+/*Менюшка*/
+.header-nav ul{
+    list-style: none;
+}
+.header-nav ul li {
+	display: inline-block;
+	padding: 10px 20px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-left: 10px;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+.header-nav ul li:hover {
+	color: ivory;
+    background-color: #333;
+}
+
+/*Mobile nav*/
+.mobile-nav {
+	position: absolute;
+	top: 110%;
+	left: 100%;
+	right: 0;
+	text-align: right;
+	background-color: rgba(10,10,10, 0.85);
+	
+
+	transition: left .4s linear;
+}
+.mobile-nav li {
+
+}
+.mobile-nav li a{
+	display: block;
+	padding: 20px 20%;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #eee;
+	border-bottom: 2px solid #999;
+	letter-spacing: 5px;
+}
+.mobile-nav li a:hover {
+	background-color: #000;
+	color: #FFDE4A;
+}
+@media screen and (max-width: 900px) {
+	.header-nav {display: none;}
+	.header-nav-btn {display: block;}
+	.left {left: 60%}
+}
+@media screen and (max-width: 600px) {
+	.left {left: 0; text-align: center;}
 }
 
 .header-title-section {
@@ -132,12 +215,13 @@ header {
     text-transform: uppercase;
     padding: 15px 45px;
     border: 2px solid #777879;
-    border-radius: 2px;
+    border-radius: 5px;
     letter-spacing: 2.16px;
 }
 .btn:hover {
     color: ivory;
     background-color: #333;
+    border-color: transparent;
 }
 @media screen and (max-width: 900px) {
 	header {

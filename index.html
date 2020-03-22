@@ -15,10 +15,31 @@
             <div class="header-section">
                 <div class="header-top">
                     <div class="header-logo">
-                        <p>SH<span>O</span>PNO</p>
+                        <a href="#"><p>SH<span>O</span>PNO</p></a>
                     </div>
-                    <div class="header-nav-btn"><div class="nav-btn"></div></div>
-                    <nav class="header-nav"></nav>
+
+                    <button class="header-nav-btn"><div class="nav-btn"></div></button>
+
+                    <nav class="header-nav">
+                    	<ul>
+                    		<li><a href="#">Home</a></li>
+                    		<li><a href="#about">About us</a></li>
+                    		<li><a href="#works">Works</a></li>
+                    		<li><a href="#services">Services</a></li>
+                    		<li><a href="#team">Our team</a></li>
+                    		<li><a href="#cites">Cites</a></li>
+                    	</ul>
+                    </nav>
+                    <nav class="mobile-nav">
+                    	<ul>
+                    		<li><a href="#">Home</a></li>
+                    		<li><a href="#about">About us</a></li>
+                    		<li><a href="#works">Works</a></li>
+                    		<li><a href="#services">Services</a></li>
+                    		<li><a href="#team">Our team</a></li>
+                    		<li><a href="#cites">Cites</a></li>
+                    	</ul>
+                    </nav>
                 </div>
     
                 <div class="header-title-section">
@@ -30,7 +51,7 @@
         </div>
     </header>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="container">
             <div class="about-us">
                 <div class="section-header">
@@ -66,7 +87,7 @@
         </div>
     </section><!--  about-section -->
 
-	<section class="works">
+	<section class="works" id="works">
 		<div class="container">
 			<div class="featured-work">
 				<div class="section-header">
@@ -85,7 +106,7 @@
 		</div>
 	</section>
 	
-	<section class="services">
+	<section class="services" id="services">
 		<div class="container">
 			<div class="our-services">
 				<div class="section-header">
@@ -140,7 +161,7 @@
 		</div>
 	</section>  <!-- services -->
 	
-	<section class="team">
+	<section class="team" id="team">
 		<div class="container">
 			<div class="section-header">
                 <h2 class="section-title">small team</h2>
@@ -175,7 +196,7 @@
 		</div>
 	</section>   <!-- TEAM -->
 
-	<section class="persons">
+	<section class="persons" id="cites">
 		<div class="container">
 			<div class="section-header">
                 <h2 class="section-title">small team</h2>
@@ -208,7 +229,8 @@
             </div>
 		</div>
 	</section>
-
+	
+	<script src="script.js"></script>
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
